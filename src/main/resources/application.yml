@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    password: Zyc19980518@
+    username: root
+    url: jdbc:mysql://127.0.0.1:3357/exam?useSSL=false&useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
