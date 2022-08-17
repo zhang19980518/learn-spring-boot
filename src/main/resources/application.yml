@@ -4,3 +4,12 @@ spring:
     username: root
     url: jdbc:mysql://127.0.0.1:3357/exam?useSSL=false&useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: maxwell
+    username: admin
+    password: 123456
+    listener:
+      simple:
+        acknowledge-mode: manual
