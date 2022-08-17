@@ -1,6 +1,8 @@
 package com.example.boot.config;
 
+import org.springframework.boot.web.embedded.netty.NettyReactiveWebServerFactory;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.reactive.server.ConfigurableReactiveWebServerFactory;
 import org.springframework.boot.web.server.Compression;
 import org.springframework.boot.web.server.WebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
@@ -17,10 +19,9 @@ public class WebConfig  {
      * @return
      */
     @Bean
-    public ConfigurableServletWebServerFactory configurableWebServerFactory(){
-        TomcatServletWebServerFactory factory=new TomcatServletWebServerFactory();
+    public ConfigurableReactiveWebServerFactory configurableWebServerFactory(){
+        NettyReactiveWebServerFactory factory=new NettyReactiveWebServerFactory();
         factory.setPort(8899);
-        factory.setContextPath("/api");
         Compression compression=new Compression();
         compression.setEnabled(true);
         compression.setMinResponseSize(DataSize.ofBytes(1024));
