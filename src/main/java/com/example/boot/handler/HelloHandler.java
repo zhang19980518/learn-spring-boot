@@ -1,6 +1,7 @@
 package com.example.boot.handler;
 
 
+import com.example.boot.dto.input.QueryDTO;
 import com.example.boot.entity.User;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
@@ -20,5 +21,12 @@ public class HelloHandler {
         return serverRequest.bodyToMono(User.class).doOnSuccess(user -> {
             System.out.println(user.toString());
         }).flatMap(ServerResponse.ok()::bodyValue);
+    }
+
+    public Mono<ServerResponse> queryByParam(ServerRequest serverRequest) {
+        var query=new QueryDTO();
+        serverRequest.queryParam("userName").ifPresent(query::setUserName);
+        serverRequest.queryParam("name").ifPresent(query::setName);
+        return ServerResponse.ok().bodyValue(query);
     }
 }

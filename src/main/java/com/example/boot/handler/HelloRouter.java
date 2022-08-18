@@ -12,6 +12,8 @@ public class HelloRouter {
     public RouterFunction<ServerResponse> route(HelloHandler handler) {
         //定义映射地址与ch处理器方法之前的对应关系
         return RouterFunctions.route(RequestPredicates.GET("/hello"), handler::hello)
-                .andRoute(RequestPredicates.POST("/login"), handler::login);
+                .andRoute(RequestPredicates.POST("/login"), handler::login)
+                .andRoute(RequestPredicates.GET("/query"),handler::queryByParam)
+                ;
     }
 }
