@@ -3,12 +3,14 @@ package com.example.boot.handler;
 
 import com.example.boot.dto.input.QueryDTO;
 import com.example.boot.entity.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
 @Component
+@Slf4j
 public class HelloHandler {
 
     public Mono<ServerResponse> hello(ServerRequest serverRequest) {
@@ -19,7 +21,7 @@ public class HelloHandler {
     public Mono<ServerResponse> login(ServerRequest serverRequest) {
 
         return serverRequest.bodyToMono(User.class).doOnSuccess(user -> {
-            System.out.println(user.toString());
+           log.info("user is:{}",user);
         }).flatMap(ServerResponse.ok()::bodyValue);
     }
 
