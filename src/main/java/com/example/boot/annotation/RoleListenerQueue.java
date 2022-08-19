@@ -8,6 +8,6 @@ import java.lang.annotation.*;
 @Target({ ElementType.TYPE, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@RabbitListener(queues = {"t_role"},ackMode = "MANUAL")
+@RabbitListener(queues = {"user"},ackMode = "MANUAL")
 public @interface RoleListenerQueue {
 }
