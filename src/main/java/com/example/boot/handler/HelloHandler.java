@@ -19,7 +19,6 @@ public class HelloHandler {
     }
 
     public Mono<ServerResponse> login(ServerRequest serverRequest) {
-
         return serverRequest.bodyToMono(User.class).doOnSuccess(user -> {
            log.info("user is:{}",user);
         }).flatMap(ServerResponse.ok()::bodyValue);

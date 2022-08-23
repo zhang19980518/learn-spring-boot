@@ -5,6 +5,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.*;
 
+/**
+ * //todo 注意 pathVariable路径需要放在哪最后
+ */
 @Configuration
 public class HelloRouter {
 
