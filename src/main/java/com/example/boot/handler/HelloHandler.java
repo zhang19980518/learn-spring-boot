@@ -2,7 +2,7 @@ package com.example.boot.handler;
 
 
 import com.example.boot.dto.input.QueryDTO;
-import com.example.boot.entity.User;
+import com.example.boot.entity.UserDemo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
@@ -19,8 +19,8 @@ public class HelloHandler {
     }
 
     public Mono<ServerResponse> login(ServerRequest serverRequest) {
-        return serverRequest.bodyToMono(User.class).doOnSuccess(user -> {
-           log.info("user is:{}",user);
+        return serverRequest.bodyToMono(UserDemo.class).doOnSuccess(userDemo -> {
+           log.info("user is:{}", userDemo);
         }).flatMap(ServerResponse.ok()::bodyValue);
     }
 

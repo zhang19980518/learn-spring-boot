@@ -6,10 +6,12 @@ import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Component;
 
 @Component
 @RabbitListener(queues = {RabbitConfig.QUEUE},ackMode = "MANUAL")
+@ConditionalOnBean(value = RabbitConfig.class)
 public class IOMQListener {
 
     @RabbitHandler
