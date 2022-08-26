@@ -2,24 +2,24 @@ package com.example.boot.service.impl;
 
 import com.example.boot.dao.UserDao;
 import com.example.boot.entity.User;
+import com.example.boot.mapper.UserMapper;
 import com.example.boot.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
-    private final UserDao userDao;
-
-    public UserServiceImpl(UserDao userDao) {
-        this.userDao = userDao;
-    }
+    private final UserMapper userDao;
 
     @Override
     public Flux<User> getList() {
-        Flux<User> userFlux = userDao.findAll();
+
+        Flux<User> userFlux = userDao.selectMany();
         userFlux.count().doOnSuccess(System.out::println);
         return userFlux;
     }

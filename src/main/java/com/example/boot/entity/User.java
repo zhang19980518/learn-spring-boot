@@ -12,6 +12,7 @@ import java.io.Serializable;
 
 
 @Data
+@Deprecated
 public class User implements Serializable {
 
     private Integer id;

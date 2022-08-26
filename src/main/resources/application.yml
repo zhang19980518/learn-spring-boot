@@ -9,6 +9,18 @@ spring:
       simple:
         acknowledge-mode: manual
   r2dbc:
+    mybatis:
+      r2dbc-url: r2dbc:mysql://127.0.0.1:3306/user?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+      username: root
+      password: Zyc19980518@
+      pool:
+        max-idle-time: PT3M
+        validation-query: SELECT 1 FROM DUAL
+        initial-size: 1
+        max-size: 3
+        acquire-retry: 3
+        validation-depth: REMOTE
+        max-create-connection-time: PT30S
     username: root
     password: Zyc19980518@
     url: r2dbc:pool:mysql://127.0.0.1:3306/user?useSSL=false&useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
@@ -16,3 +28,7 @@ spring:
     r2dbc:
       repositories:
         enabled: true
+logging:
+  level:
+    pro.chenggang: DEBUG
+    org.springframework.r2dbc: DEBUG

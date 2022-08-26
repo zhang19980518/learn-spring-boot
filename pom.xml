@@ -39,7 +39,26 @@
             <artifactId>jasync-r2dbc-mysql</artifactId>
             <version>${jasync.r2dbc.mysql.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.mybatis.dynamic-sql</groupId>
+            <artifactId>mybatis-dynamic-sql</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>pro.chenggang</groupId>
+            <artifactId>mybatis-r2dbc</artifactId>
+            <version>1.2.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>pro.chenggang</groupId>
+            <artifactId>mybatis-r2dbc-generator</artifactId>
+            <version>1.2.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>pro.chenggang</groupId>
+            <artifactId>mybatis-r2dbc-spring</artifactId>
+            <version>1.2.4.RELEASE</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
         <dependency>
             <groupId>com.alibaba.fastjson2</groupId>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.boot.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.example.boot.model.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+  </resultMap>
+  <resultMap id="TableResultMap" type="com.example.boot.model.User">
+    <id column="user_id" jdbcType="INTEGER" property="id" />
+    <result column="user_name" jdbcType="VARCHAR" property="name" />
+  </resultMap>
+  <sql id="columnNameWithTable">
+    user.id AS user_id, 
+    user.name AS user_name
+  </sql>
+</mapper>
