@@ -18,5 +18,5 @@ import reactor.core.publisher.Mono;
 @Mapper
 public interface UserMapper extends UserDynamicMapper {
 
-   
+
 }
