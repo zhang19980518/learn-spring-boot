@@ -1,4 +1,9 @@
 spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/user?useSSL=false&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: Zyc19980518@
   rabbitmq:
     host: localhost
     port: 5672
@@ -8,11 +13,12 @@ spring:
     listener:
       simple:
         acknowledge-mode: manual
-  r2dbc:
-    username: root
-    password: Zyc19980518@
-    url: r2dbc:pool:mysql://127.0.0.1:3306/user?useSSL=false&useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
-  data:
-    r2dbc:
-      repositories:
-        enabled: true
+mybatis-plus:
+  global-config:
+    banner: false
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      logic-delete-field: deleted
+  mapper-locations: classpath*:/mappers/**/*.xml
+  type-aliases-package: com.example.boot.entity

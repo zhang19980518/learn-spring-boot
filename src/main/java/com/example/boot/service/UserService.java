@@ -1,14 +1,14 @@
 package com.example.boot.service;
 
 import com.example.boot.entity.User;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 
 public interface UserService {
-    Flux<User> getList();
+    List<User> getList();
 
-    Mono<User> getById(Integer id);
+    User getById(Integer id);
 
-    Mono<User> saveUser(Mono<User> userMono);
+    User saveUser(User user);
 }
