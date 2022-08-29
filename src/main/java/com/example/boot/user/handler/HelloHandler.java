@@ -1,8 +1,8 @@
-package com.example.boot.handler;
+package com.example.boot.user.handler;
 
 
-import com.example.boot.dto.input.QueryDTO;
-import com.example.boot.entity.UserDemo;
+import com.example.boot.user.input.QueryDTO;
+import com.example.boot.user.entity.UserDemo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;

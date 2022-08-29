@@ -1,7 +1,7 @@
-package com.example.boot.service.impl;
+package com.example.boot.user.service.impl;
 
-import com.example.boot.entity.User;
-import com.example.boot.service.UserService;
+import com.example.boot.user.entity.User;
+import com.example.boot.user.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;

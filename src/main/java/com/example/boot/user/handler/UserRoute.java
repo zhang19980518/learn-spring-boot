@@ -1,7 +1,6 @@
-package com.example.boot.handler;
+package com.example.boot.user.handler;
 
 
-import com.example.boot.entity.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RequestPredicates;

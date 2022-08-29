@@ -1,6 +1,6 @@
-package com.example.boot.service;
+package com.example.boot.user.service;
 
-import com.example.boot.entity.User;
+import com.example.boot.user.entity.User;
 
 import java.util.List;
 

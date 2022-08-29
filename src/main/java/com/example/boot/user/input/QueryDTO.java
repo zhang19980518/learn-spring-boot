@@ -1,4 +1,4 @@
-package com.example.boot.dto.input;
+package com.example.boot.user.input;
 
 
 import lombok.Data;
