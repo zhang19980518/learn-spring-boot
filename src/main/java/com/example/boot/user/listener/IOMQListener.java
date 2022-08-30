@@ -1,4 +1,4 @@
-package com.example.boot.listener;
+package com.example.boot.user.listener;
 
 
 import com.example.boot.config.RabbitConfig;

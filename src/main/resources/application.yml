@@ -21,8 +21,10 @@ spring:
         acknowledge-mode: manual
   main:
     allow-bean-definition-overriding: true
-mybatis:
+mybatis-plus:
   mapper-locations: classpath*:/mappers/**/*.xml
+  global-config:
+    banner: false
 boot:
   host: localhost
   port: 3306

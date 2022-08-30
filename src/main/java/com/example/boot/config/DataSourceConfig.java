@@ -40,6 +40,7 @@ public class DataSourceConfig {
         var xaDataSource = new AtomikosDataSourceBean();
         xaDataSource.setXaDataSource(initDataSource("jdbc:mysql://localhost:3306/user","root","Zyc19980518@"));
         xaDataSource.setUniqueResourceName("mysqlFirstDataSource");
+        xaDataSource.setPoolSize(10);
         return xaDataSource;
     }
 
@@ -60,6 +61,7 @@ public class DataSourceConfig {
         var xaDataSource = new AtomikosDataSourceBean();
         xaDataSource.setXaDataSource(initDataSource("jdbc:mysql://localhost:3306/exam","root","Zyc19980518@"));
         xaDataSource.setUniqueResourceName("mysqlSecondDataSource");
+        xaDataSource.setPoolSize(10);
         return xaDataSource;
     }
 
